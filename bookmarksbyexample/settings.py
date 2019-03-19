@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = '*_se!usi8))l5tiun=kz9@w=c5k7vl2dyiehve%f7k$d8-&l$$'
 DEBUG = True
 
 ALLOWED_HOSTS = ['mysite.com', 'localhost', '127.0.0.1']
-
 
 # Application definition
 
@@ -73,13 +71,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bookmarksbyexample.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE':'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'bookmarksbyexample',
         'USER': 'postgres',
         'PASSWORD': '1888vict',
@@ -87,7 +84,6 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -107,7 +103,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
@@ -120,7 +115,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -147,9 +141,15 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBAckend',
     'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
 ]
 
-SOCIAL_AUTH_FACEBOOK_KEY = '2249516331735867' # Facebook App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = '2746d13af7524015bb461758ad3580cd' # Facebook App Secret
+SOCIAL_AUTH_FACEBOOK_KEY = '2249516331735867'  # Facebook App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '2746d13af7524015bb461758ad3580cd'  # Facebook App Secret
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1050190296342-q5b6cdrkdb13agpn6h8r3ht8h0l8e7sl.apps.googleusercontent.com' # Google Consumer Key
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'Kw5kDmNV_1Kchq23Jw-8498g' # Google Consumer Secret
+
 
